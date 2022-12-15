@@ -59,6 +59,9 @@ countries = {
 country_name = st.selectbox("Please enter the country of the bank: ", countries.keys())
 country = countries[country_name]
 
+if "country" not in st.session_state:
+	st.session_state["country"]=country
+	
 if (country!="Sandbox"):
 
 	institutions = client.institution.get_institutions(country)
