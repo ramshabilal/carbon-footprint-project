@@ -2,6 +2,7 @@ import streamlit as st
 from uuid import uuid4
 from nordigen import NordigenClient
 import webbrowser
+from bokeh.models.widgets import Div
 
 
 
@@ -85,7 +86,7 @@ if st.button("Submit"):
 	    # institution id
 	    institution_id=institution_id, #"SANDBOXFINANCE_SFIN0000"
 	    # redirect url after successful authentication
-	    redirect_uri="http://localhost:8501/contact", 
+	    redirect_uri="https://ramshabilal-carbon-footprint-project-genify-izy4f3.streamlit.app/contact", 
 	    # additional layer of unique ID defined by you
 	    reference_id=str(uuid4())
 	)
@@ -99,7 +100,13 @@ if st.button("Submit"):
 	link = init.link # bank authorization link
 	requisition_id = init.requisition_id
 
-	webbrowser.open(link) 
+	#webbrowser.open(link) 
+	
+	js = "window.open('https://www.streamlit.io/')"  # New tab or window
+	js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+	html = '<img src onerror="{}">'.format(js)
+	div = Div(text=html)
+	st.bokeh_chart(div)
 
 	
  	
