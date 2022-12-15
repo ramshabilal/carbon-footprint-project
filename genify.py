@@ -103,7 +103,6 @@ if st.button("Submit"):
 	#webbrowser.open(link) 
 	
 	js = "window.open(f'{init.link}')"  # New tab or window
-	js = "window.location.href = 'https://ramshabilal-carbon-footprint-project-genify-izy4f3.streamlit.app/'"  # Current tab
 	html = '<img src onerror="{}">'.format(js)
 	div = Div(text=html)
 	st.bokeh_chart(div)
