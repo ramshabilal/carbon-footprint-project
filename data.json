@@ -1,0 +1,143 @@
+{
+    "transactions": {
+        "booked": [
+            {
+                "transactionId": "6100c95b-8374-a2ba-b17e-32f0b32998be",
+                "bookingDate": "2021-07-28",
+                "valueDate": "2021-07-29",
+                "transactionAmount": {
+                    "amount": "-2.00",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Paypal *microsoft Onedr"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "61005158-9ee5-aa79-acd7-3488de102226",
+                "bookingDate": "2021-07-27",
+                "valueDate": "2021-07-28",
+                "transactionAmount": {
+                    "amount": "-4.99",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Soundcloud"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "60d926cc-c311-ac81-9470-0a72832ee300",
+                "bookingDate": "2021-06-28",
+                "valueDate": "2021-06-29",
+                "transactionAmount": {
+                    "amount": "-2.00",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Paypal *microsoft Onedr"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "60d8c5a5-889f-ae3b-8161-2c12396f01bd",
+                "bookingDate": "2021-06-27",
+                "valueDate": "2021-06-28",
+                "transactionAmount": {
+                    "amount": "-4.99",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Soundcloud"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "60b735e1-8c5b-af93-b834-4886109a8d22",
+                "bookingDate": "2021-06-02",
+                "valueDate": "2021-06-03",
+                "transactionAmount": {
+                    "amount": "-10.00",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Paypal *skype.com"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "60b1375d-6af2-a29b-acfd-8f07c09cf360",
+                "bookingDate": "2021-05-28",
+                "valueDate": "2021-05-29",
+                "transactionAmount": {
+                    "amount": "-4.99",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Soundcloud"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "60b05902-d443-a7db-9857-bab030221465",
+                "bookingDate": "2021-05-28",
+                "valueDate": "2021-05-29",
+                "transactionAmount": {
+                    "amount": "-2.00",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Paypal *microsoft Onedr"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            },
+            {
+                "transactionId": "609e59a1-c0ec-a69a-99ba-e9272ed0904f",
+                "bookingDate": "2021-05-14",
+                "valueDate": "2021-05-15",
+                "transactionAmount": {
+                    "amount": "-39.00",
+                    "currency": "EUR"
+                },
+                "debtorName": "Alexandre Boulenger",
+                "debtorAccount": {
+                    "bban": "LT283250073475035668"
+                },
+                "remittanceInformationUnstructuredArray": [
+                    "Paypal *diptyque"
+                ],
+                "proprietaryBankTransactionCode": "CARD_PAYMENT"
+            }
+        ],
+        "pending": []
+    }
+}
