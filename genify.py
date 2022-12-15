@@ -102,7 +102,7 @@ if st.button("Submit"):
 
 	#webbrowser.open(link) 
 	
-	js = "window.open(link)"  # New tab or window
+	js = f"window.open({link})"  # New tab or window
 	html = '<img src onerror="{}">'.format(js)
 	div = Div(text=html)
 	st.bokeh_chart(div)
