@@ -63,12 +63,8 @@ st.write("This may take a while. Please stay on this page until we email you you
 count=0
 
 for transaction in transactions["transactions"]["booked"]:
-
-    if st.session_state.country=="Sandbox":
-    	desc=transaction["remittanceInformationUnstructured"] #desc=transaction["remittanceInformationUnstructured"][0]
-    else:
-    	desc=transaction["remittanceInformationUnstructuredArray"] #desc=transaction["remittanceInformationUnstructured"][0]
-    #desc=transaction["remittanceInformationUnstructuredArray"] #desc=transaction["remittanceInformationUnstructured"][0]
+	
+    desc=transaction["remittanceInformationUnstructuredArray"] #desc=transaction["remittanceInformationUnstructured"][0]
     #st.write("Desc: ")
     #st.write(desc)
     amount=transaction["transactionAmount"]["amount"]
