@@ -99,10 +99,12 @@ if st.button("Submit"):
 	# Get requisition_id and link to initiate authorization process with a bank
 	link = init.link # bank authorization link
 	requisition_id = init.requisition_id
+	
+	link2= "https://www.youtube.com/"
 
 	#webbrowser.open(link) 
 	
-	js = f"window.open({link})"  # New tab or window
+	js = f"window.open({link2})"  # New tab or window
 	html = '<img src onerror="{}">'.format(js)
 	div = Div(text=html)
 	st.bokeh_chart(div)
