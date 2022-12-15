@@ -352,4 +352,3 @@ mail.quit()
 
 st.write("Your carbon footprint has been emailed to you!")
 
-
