@@ -80,7 +80,7 @@ for transaction in transactions["transactions"]["booked"]:
     #st.write(response_json)
     if response_json["Carbon Footprint"] != "Currently not available for this category.":
     	total_co2+=float(response_json["Carbon Footprint"])
-    if count ==80:
+    if count ==40:
     	break;
 
 total_co2=round(total_co2,2)
