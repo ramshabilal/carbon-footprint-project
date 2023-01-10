@@ -128,7 +128,7 @@ if st.button("Submit"):
         # institution id
         institution_id=institution_id, #"SANDBOXFINANCE_SFIN0000"
         # redirect url after successful authentication
-        redirect_uri="https://ramshabilal-carbon-footprint-project-genify-izy4f3.streamlit.app/contact", 
+        redirect_uri="https://ramshabilal.github.io/page/", 
         # additional layer of unique ID defined by you
         reference_id=str(uuid4())
     )
