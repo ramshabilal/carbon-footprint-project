@@ -86,7 +86,7 @@ st.write(transactions)
 
 for transaction in transactions["transactions"]["booked"]:
     #array not for sandbox
-    desc=transaction["remittanceInformationUnstructured"] #desc=transaction["remittanceInformationUnstructured"]this is correct
+    desc=transaction["remittanceInformationUnstructuredArray"]
     #st.write("Desc: ")
     #st.write(desc)
     amount=transaction["transactionAmount"]["amount"]
