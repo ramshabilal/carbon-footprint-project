@@ -84,7 +84,7 @@ count=0
 
 for transaction in transactions["transactions"]["booked"]:
     #array not for sandbox
-    desc=transaction["remittanceInformationUnstructuredArray"] #desc=transaction["remittanceInformationUnstructured"][0]
+    desc=transaction["remittanceInformationUnstructured"] #desc=transaction["remittanceInformationUnstructured"]this is correct
     #st.write("Desc: ")
     #st.write(desc)
     amount=transaction["transactionAmount"]["amount"]
