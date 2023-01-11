@@ -39,6 +39,8 @@ accounts = st.session_state.client.requisition.get_requisition_by_id(
     requisition_id=st.session_state.init.requisition_id
 )
 
+emailAddress = st.text_input("Enter the email address where you want your report sent: ")
+
 # Get account id from the list.
 account_id = accounts["accounts"][0]
 #account_id="account_0"
@@ -113,7 +115,7 @@ total_co2=round(total_co2,2)
 # me == my email address
 # you == recipient's email address
 me = "genifyco2@gmail.com"
-you = st.session_state.emailAddress
+you = emailAddress
 
 # Create message container - the correct MIME type is multipart/alternative.
 msg = MIMEMultipart('alternative')
