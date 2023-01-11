@@ -82,6 +82,8 @@ st.write("This may take a while. Please stay on this page until we email you you
 #st.write(transactions)
 count=0
 
+st.write(transactions)
+
 for transaction in transactions["transactions"]["booked"]:
     #array not for sandbox
     desc=transaction["remittanceInformationUnstructured"] #desc=transaction["remittanceInformationUnstructured"]this is correct
