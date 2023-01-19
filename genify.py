@@ -116,16 +116,13 @@ countries = {
     "Sandbox": "Sandbox" 
 }
 
-st.write("Please enter the following:")
-name=""
-emailAddress=""
-while name =="" and emailAddress == "":
-    name = st.text_input("Name: ")
-    if 'name' not in st.session_state:
-        st.session_state["name"]=name
-    emailAddress = st.text_input("Email: ")
-    if 'emailAddress' not in st.session_state:
-        st.session_state["emailAddress"]=emailAddress
+st.write("Please enter the following:")    
+name = st.text_input("Name: ")
+if 'name' not in st.session_state:
+    st.session_state["name"]=name
+emailAddress = st.text_input("Email: ")
+if 'emailAddress' not in st.session_state:
+    st.session_state["emailAddress"]=emailAddress
     
 country_name = st.selectbox("Please enter the country of the bank: ", countries.keys())
 country = countries[country_name]
