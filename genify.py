@@ -112,7 +112,7 @@ countries = {
     "Slovenia": "SI",
     "Spain": "ES",
     "Sweden": "SE",
-    "United Kingdom": "UK",
+    "United Kingdom": "GB",
     "Sandbox": "Sandbox" 
 }
 
