@@ -41,8 +41,8 @@ else:
     accounts = st.session_state.client.requisition.get_requisition_by_id(
         requisition_id=st.session_state.init.requisition_id
     )
-    if 'emailAddress' not in st.session_state:
-        emailAddress = st.text_input("Enter the email address where you want your report sent: ")
+    if st.session_state.emailAddress == "":
+        emailAddress = st.text_input("Your email address was not recorded. Please re-enter: ")
     else:
         emailAddress = st.session_state.emailAddress
 
@@ -112,7 +112,7 @@ else:
         #st.write(response_json)
         if response_json["Carbon Footprint"] != "Currently not available for this category.":
             total_co2+=float(response_json["Carbon Footprint"])
-        if count ==40:
+        if count ==10:
             break;
 
     total_co2=round(total_co2,2)
