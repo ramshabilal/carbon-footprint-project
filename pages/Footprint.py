@@ -7,7 +7,7 @@ import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from PIL import Image
-#"st.session_state object:", st.session_state
+"st.session_state object:", st.session_state
 
 #opening the image
 
