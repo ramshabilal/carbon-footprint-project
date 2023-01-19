@@ -12,6 +12,16 @@ from bokeh.models.widgets import Div
 from streamlit.components.v1 import html
 from PIL import Image
 
+#condense the layout
+padding = 0
+st.markdown(f""" <style>
+    .reportview-container .main .block-container{{
+        padding-top: {padding}rem;
+        padding-right: {padding}rem;
+        padding-left: {padding}rem;
+        padding-bottom: {padding}rem;
+    }} </style> """, unsafe_allow_html=True)
+
 #opening the image
 image = Image.open('logo.png')
 #displaying the image on streamlit app
