@@ -42,7 +42,7 @@ div.stButton > button:hover {
 image = Image.open('logo.png')
 #displaying the image on streamlit app
 
-st.image(image, width = 100%)
+st.image(image, width = 140)
 
 import base64
 def add_bg_from_local(image_file):
