@@ -119,7 +119,7 @@ countries = {
 st.write("Please enter the following:")
 name=""
 emailAddress=""
-while name =="" && emailAddress == "":
+while name =="" and emailAddress == "":
     name = st.text_input("Name: ")
     if 'name' not in st.session_state:
         st.session_state["name"]=name
