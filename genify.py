@@ -11,7 +11,7 @@ import webbrowser
 from bokeh.models.widgets import Div
 from streamlit.components.v1 import html
 from PIL import Image
-
+import base64
 
 #condense the layout
 padding = 0
@@ -44,7 +44,6 @@ image = Image.open('logo.png')
 
 st.image(image, width = 140)
 
-import base64
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -66,7 +65,6 @@ st.title("Calculating your emissions to make a positive impact")
 
 #instructions
 st.write("1. Enter your information below  \n2. Connect to your bank so we download your credit card consumption pattern (temporary connection)  \n3. Receive a personal report of your impact by email")
-
 
 # initialize Nordigen client and pass SECRET_ID and SECRET_KEY
 client = NordigenClient(
@@ -174,7 +172,7 @@ if st.button("Submit"):
     div = Div(text=html)
     st.bokeh_chart(div)
 
-    st.title("Go to Footprint Page if you have completed the authorization")
+    st.caption("Go to Footprint Page if you have completed the authorization")
     
   
 
