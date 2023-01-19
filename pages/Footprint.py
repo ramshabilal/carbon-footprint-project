@@ -41,8 +41,10 @@ else:
     accounts = st.session_state.client.requisition.get_requisition_by_id(
         requisition_id=st.session_state.init.requisition_id
     )
-
-    emailAddress = st.text_input("Enter the email address where you want your report sent: ")
+    if 'emailAddress' not in st.session_state:
+        emailAddress = st.text_input("Enter the email address where you want your report sent: ")
+    else:
+        emailAddress = st.session_state.emailAddress
 
     # Get account id from the list.
     account_id = accounts["accounts"][0]
@@ -91,7 +93,10 @@ else:
 
     for transaction in transactions["transactions"]["booked"]:
         #array not for sandbox
-        desc=transaction["remittanceInformationUnstructuredArray"][0]
+        if st.session_state.country != "Sandbox":
+            desc=transaction["remittanceInformationUnstructuredArray"][0]
+        else:
+            desc = transaction["remittanceInformationUnstructured"]
         st.write("Desc: ")
         st.write(desc)
         amount=transaction["transactionAmount"]["amount"]
