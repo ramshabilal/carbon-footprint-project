@@ -173,7 +173,7 @@ if st.button("Submit"):
     st.bokeh_chart(div)
 
     st.markdown("**:red[Go to Footprint Page if you have completed the authorization]**")
-    st.markdown(”This text is :red[colored red], and this is **:blue[colored]** and bold.”)
+    st.markdown("This text is :red[colored red], and this is **:blue[colored]** and bold.")
     
   
 
