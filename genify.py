@@ -39,9 +39,7 @@ add_bg_from_local('back.jpeg')
 st.title("Calculating your emissions to make a positive impact")
 
 #instructions
-st.write("1. Enter your information below\n
-2. Connect to your bank so we download your credit card consumption pattern (temporary connection)\n
-3. Receive a personal report of your impact by email")
+st.write("1. Enter your information below  \n2. Connect to your bank so we download your credit card consumption pattern (temporary connection)  \n3. Receive a personal report of your impact by email")
 
 
 # initialize Nordigen client and pass SECRET_ID and SECRET_KEY
