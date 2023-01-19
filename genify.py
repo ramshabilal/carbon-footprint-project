@@ -12,6 +12,16 @@ from bokeh.models.widgets import Div
 from streamlit.components.v1 import html
 from PIL import Image
 
+
+
+st.markdown(""" <style>
+    div.stHeader >header: first-child {color: #ff0000;
+    width:100%;}
+    </style> """, unsafe_allow_html=True)
+
+st.header("Em-Pact")
+
+
 #condense the layout
 padding = 0
 st.markdown(f""" <style>
