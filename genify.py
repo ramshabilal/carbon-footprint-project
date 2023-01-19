@@ -13,15 +13,6 @@ from streamlit.components.v1 import html
 from PIL import Image
 
 
-
-st.markdown(""" <style>
-    div.stHeader >header: first-child {color: #ff0000;
-    width:100%;}
-    </style> """, unsafe_allow_html=True)
-
-st.header("Em-Pact")
-
-
 #condense the layout
 padding = 0
 st.markdown(f""" <style>
@@ -32,7 +23,7 @@ st.markdown(f""" <style>
         padding-bottom: {padding}rem;
     }} </style> """, unsafe_allow_html=True)
 
-#change button color
+#change submit button color
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
@@ -45,11 +36,13 @@ div.stButton > button:hover {
     }
 </style>""", unsafe_allow_html=True)
 
+
+#logo on top
 #opening the image
 image = Image.open('logo.png')
 #displaying the image on streamlit app
 
-st.image(image, width = 180)
+st.image(image, width = 100%)
 
 import base64
 def add_bg_from_local(image_file):
