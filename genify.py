@@ -172,7 +172,7 @@ if st.button("Submit"):
     div = Div(text=html)
     st.bokeh_chart(div)
 
-    st.caption("Go to Footprint Page if you have completed the authorization")
+    st.markdown("**:red[Go to Footprint Page if you have completed the authorization]**")
     
   
 
