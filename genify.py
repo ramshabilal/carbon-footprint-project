@@ -39,10 +39,11 @@ div.stButton > button:hover {
 
 #logo on top
 #opening the image
-image = Image.open('logo.png')
-#displaying the image on streamlit app
 
-st.image(image, width = 140)
+# image = Image.open('logo.png')
+
+#displaying the image on streamlit app
+# st.image(image, width = 140)
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -172,7 +173,7 @@ if st.button("Submit"):
     div = Div(text=html)
     st.bokeh_chart(div)
 
-    new_title = '<p style="font-family:sans-serif; color:Black; font-size: 32px;">Go to Footprint Page if you have completed the authorization</p>'
+    new_title = '<p style="font-family:sans-serif; color:Black; font-size: 26px;">Go to Footprint Page if you have completed the authorization</p>'
     st.markdown(new_title, unsafe_allow_html=True)
   
 
