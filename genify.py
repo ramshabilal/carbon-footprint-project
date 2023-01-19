@@ -12,10 +12,37 @@ from bokeh.models.widgets import Div
 from streamlit.components.v1 import html
 from PIL import Image
 
+#opening the image
+image = Image.open('logo.png')
+#displaying the image on streamlit app
+
+st.image(image, width = 180)
+
+import base64
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
 add_bg_from_local('back.jpeg')    
 
 #st.header("EM-PACT")
 st.title("Calculating your emissions to make a positive impact")
+
+#instructions
+st.write("1. Enter your information below\n
+2. Connect to your bank so we download your credit card consumption pattern (temporary connection)\n
+3. Receive a personal report of your impact by email")
+
 
 # initialize Nordigen client and pass SECRET_ID and SECRET_KEY
 client = NordigenClient(
