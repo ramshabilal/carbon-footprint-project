@@ -98,6 +98,7 @@ else:
             desc=transaction["remittanceInformationUnstructuredArray"][0]
         else:
             desc = transaction["remittanceInformationUnstructured"]
+            st.session_state.country="lt"
         st.write("Desc: ")
         st.write(desc)
         amount=transaction["transactionAmount"]["amount"]
@@ -105,7 +106,7 @@ else:
         #st.write(amount)
         date = transaction["bookingDate"]
         #st.write("date: " + date)
-        url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country=lt&amount={amount}&description={desc}"
+        url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={st.session_state.country}&amount={amount}&description={desc}"
         response = requests.get(url, headers=headers)
         response_json=response.json() 
         count+=1
@@ -158,7 +159,7 @@ else:
     </head>
     <body>
             <!--*|IF:MC_PREVIEW_TEXT|*-->
-            <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
+            <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">|Your Carbon Footprint|</span><!--<![endif]-->
             <!--*|END:IF|*-->
             <center>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
