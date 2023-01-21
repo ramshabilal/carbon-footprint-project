@@ -129,10 +129,11 @@ else:
             #save carbon footprint and category for each transaction
             carbon_footprint = response_json["Carbon Footprint"]
             category = response_json["Category Name"]
-        
+            description= response_json["Display Description"]
             # Save transaction data in a dictionary
             transaction_data = { 
-                "description": desc,
+                "description": description,
+                "amount": amount,
                 "carbon_footprint": carbon_footprint,
                 "category": category
             }
@@ -152,6 +153,7 @@ else:
     for i in range(5):
         transaction = transactions_data[i]
         st.write("Description: ", transaction["description"])
+        st.write("Amount: ", transaction["amount"])
         st.write("Carbon Footprint: ", transaction["carbon_footprint"])
         st.write("Category: ", transaction["category"])
    
@@ -159,14 +161,16 @@ else:
     #st.write(total_co2)
 
     # Create a pandas DataFrame from the transaction data
-    transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "carbon_footprint", "category"])
+    transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "amount", "carbon_footprint", "category"])
 
     # Generate a table of the top 5 transactions
+    st.write(transactions_df)
     table = transactions_df.to_html()
     st.write(table)
+
     # me == my email address
     # you == recipient's email address
-    me = "genifyco2@gmail.com"
+    me = "empact.genify@gmail.com"
     you = emailAddress
 
     # Create message container - the correct MIME type is multipart/alternative.
@@ -178,7 +182,7 @@ else:
     
     code=total_co2
     code2 = st.session_state.name
-
+    code3 = table
     # Create the body of the message (a plain-text and an HTML version).
     text = "Hi!How are you?Here is your carbon footprint: " + str(total_co2) + " kg"
     html = """\
@@ -292,6 +296,10 @@ else:
     &nbsp;
     <div style="text-align: center;"><span style="color:#495639">{code2}, your total emissions in 2022 have amounted to<br>
     <span style="font-size:20px"><strong>{code}</strong></span><br>
+    <div style="text-align: center;"><span style="color:#495639">Here is a list of your top 5 transactions that had the highest carbon footprints<br>
+    <center>
+        {code3}<br>
+    </center>
     <span style="font-size:18px"><strong>________________</strong></span><br>
     <br>
     Notice, in 2022 the average person had emissions of<br>
@@ -400,22 +408,20 @@ else:
         <script type="text/javascript"  src="/nDI1x6/hTmSb/Q6B84/CYx4/DEXESbcz/I0J6RQ/Rwo7/RA4JQTYB"></script>
       </body>
     </html>
-    """.format(code=code, code2=code2)
+    """.format(code=code, code2=code2, code3=code3)
 
     # Record the MIME types of both parts - text/plain and text/html.
     part1 = MIMEText(text, 'plain')
     part2 = MIMEText(html, 'html')
-    
-    #Add the table to the email body
-    #msg.attach(MIMEText(table, "html"))
-    
+    part3 = MIMEText(table, 'html')
     
     # Attach parts into message container.
     # According to RFC 2046, the last part of a multipart message, in this case
     # the HTML message, is best and preferred.
     msg.attach(part1)
     msg.attach(part2)
-       
+    #Add the table to the email body
+    #msg.attach(part3)
     
     # Send the message via local SMTP server.
     mail = smtplib.SMTP('smtp.gmail.com', 587)
@@ -424,7 +430,7 @@ else:
 
     mail.starttls()
 
-    mail.login('genifyco2@gmail.com', 'yeddgqtknwfjowsy')
+    mail.login('empact.genify@gmail.com', 'fxgdnngwkzhtxxby')
     mail.sendmail(me, you, msg.as_string())
     mail.quit()
 
