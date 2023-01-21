@@ -117,7 +117,7 @@ else:
         except ValueError as e:
             print("Error: Not a JSON response")   
             continue
-        response_json=response.json() 
+        #response_json=response.json() 
         st.write(response_json)
         
         
