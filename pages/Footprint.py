@@ -101,7 +101,7 @@ else:
             desc = transaction["remittanceInformationUnstructured"]
         #st.write("Description: ")
         #st.write(desc)
-        
+        count+=1
         amount=transaction["transactionAmount"]["amount"]
         #st.write("amount: ")
         #st.write(amount)
@@ -120,7 +120,7 @@ else:
         response_json=response.json() 
         st.write(response_json)
         
-        count+=1
+        
         #st.write("response json co2: ")
         
         
