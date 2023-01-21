@@ -13,11 +13,9 @@ import base64
 "st.session_state object:", st.session_state
 
 #opening the image
-
-image = Image.open('logo.png')
+#image = Image.open('logo.png')
 #displaying the image on streamlit app
-
-st.image(image, width = 180)
+#st.image(image, width = 180)
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -101,11 +99,9 @@ else:
             desc=transaction["remittanceInformationUnstructuredArray"][0]
         else:
             desc = transaction["remittanceInformationUnstructured"]
-        st.write("Desc: ")
-        st.write(desc)
+        #st.write("Description: ")
+        #st.write(desc)
         
-        
-       
         amount=transaction["transactionAmount"]["amount"]
         #st.write("amount: ")
         #st.write(amount)
@@ -162,11 +158,11 @@ else:
 
     # Create a pandas DataFrame from the transaction data
     transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "amount", "carbon_footprint", "category"])
-
-    # Generate a table of the top 5 transactions
     st.write(transactions_df)
+    
+    # Generate a table of the top 5 transactions
     table = transactions_df.to_html()
-    st.write(table)
+    #st.write(table)
 
     # me == my email address
     # you == recipient's email address
