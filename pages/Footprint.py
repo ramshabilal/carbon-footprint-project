@@ -114,8 +114,8 @@ else:
         response = requests.get(url, headers=headers)
         if not response.content:
             continue 
-        
-        st.write(response_json)
+        else:
+            st.write(response_json)
         
         count+=1
         #st.write("response json co2: ")
@@ -137,7 +137,7 @@ else:
        
             # Append transaction data to the list
             transactions_data.append(transaction_data)
-        if count ==40:
+        if count ==20:
             break;
 
     total_co2=round(total_co2,2)
