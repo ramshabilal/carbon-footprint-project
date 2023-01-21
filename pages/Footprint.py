@@ -138,9 +138,10 @@ else:
        
             # Append transaction data to the list
             transactions_data.append(transaction_data)
-        if count ==20:
+        if count == 30:
             break;
-
+    st.write("transaction count")
+    st.write(count)
     total_co2=round(total_co2,2)
    
     # Sort transactions_data list by carbon_footprint in descending order
