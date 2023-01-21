@@ -91,7 +91,7 @@ else:
     count=0
 
     #st.write(transactions)
-    max_transaction = transactions["transactions"]["booked"][0]
+    max_transaction = transactions["transactions"]["booked"][1]
     st.write(max_transaction)
     st.write("^ is the max")
     
