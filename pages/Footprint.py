@@ -93,7 +93,9 @@ else:
     transactions_data=[]
     
     for transaction in transactions["transactions"]["booked"]:
-        
+        count+=1
+        if count == 30:
+            break;
         #array not for sandbox
         if st.session_state.country != "Sandbox":
             desc=transaction["remittanceInformationUnstructuredArray"][0]
@@ -101,7 +103,7 @@ else:
             desc = transaction["remittanceInformationUnstructured"]
         #st.write("Description: ")
         #st.write(desc)
-        count+=1
+        
         amount=transaction["transactionAmount"]["amount"]
         #st.write("amount: ")
         #st.write(amount)
@@ -140,8 +142,7 @@ else:
        
             # Append transaction data to the list
             transactions_data.append(transaction_data)
-        if count == 30:
-            break;
+        
     st.write("transaction count")
     st.write(count)
     total_co2=round(total_co2,2)
