@@ -163,7 +163,7 @@ else:
 
     # Generate a table of the top 5 transactions
     table = transactions_df.to_html()
-    
+    st.write(table)
     # me == my email address
     # you == recipient's email address
     me = "genifyco2@gmail.com"
