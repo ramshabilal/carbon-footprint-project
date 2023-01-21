@@ -98,7 +98,6 @@ else:
             desc=transaction["remittanceInformationUnstructuredArray"][0]
         else:
             desc = transaction["remittanceInformationUnstructured"]
-            st.session_state.country="lt"
         st.write("Desc: ")
         st.write(desc)
         amount=transaction["transactionAmount"]["amount"]
