@@ -112,7 +112,8 @@ else:
             country = "lt"
         url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={country}&amount={amount}&description={desc}"
         response = requests.get(url, headers=headers)
-        response_json=response.json() 
+        if not response.content:
+            continue 
         
         st.write(response_json)
         
