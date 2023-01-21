@@ -93,7 +93,7 @@ else:
     #st.write(transactions)
     max_transaction = transactions["transactions"]["booked"][0]
     st.write(max_transaction)
-    st.write('^ is the max))
+    st.write("^ is the max")
     for transaction in transactions["transactions"]["booked"]:
         if transaction["transactionAmount"]["amount"] > max_transaction["transactionAmount"]["amount"]:
             max_transaction = transaction
@@ -126,7 +126,7 @@ else:
 
     total_co2=round(total_co2,2)
     st.write(max_transaction)
-    st.write('^ is the max))
+    st.write(("^ is the max")
     #st.write("total co2: ")
     #st.write(total_co2)
 
