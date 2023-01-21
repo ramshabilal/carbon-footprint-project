@@ -76,12 +76,12 @@ else:
 
 
     headers = {
-      'username': 'ramsha',
+      'username': 'julien_test',
       'carbonfootprint': '1',
       'category': '1',
       'account_id': account_id,
       'model_name': 'model_5',
-      'authorization': '6d33727b42d2b57c76eed0664e12f9af'
+      'authorization': '46b3d7c9-be84-4ae6-9d9d-91ebaed94e01'
     }
 
     total_co2=0
