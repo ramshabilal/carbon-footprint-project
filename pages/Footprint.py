@@ -101,6 +101,8 @@ else:
             desc = transaction["remittanceInformationUnstructured"]
         st.write("Desc: ")
         st.write(desc)
+        
+        
        
         amount=transaction["transactionAmount"]["amount"]
         #st.write("amount: ")
@@ -114,25 +116,27 @@ else:
         response = requests.get(url, headers=headers)
         response_json=response.json() 
         
-        carbon_footprint = response_json["Carbon Footprint"]
-        category = response_json["Category"]
-        
-        # Save transaction data in a dictionary
-        transaction_data = { 
-            "description": desc,
-            "carbon_footprint": carbon_footprint,
-            "category": category
-        }
-       
-        # Append transaction data to the list
-        transactions_data.append(transaction_data)
+        st.write(response_json)
         
         count+=1
         #st.write("response json co2: ")
-        st.write(response_json)
+        
         
         if response_json["Carbon Footprint"] != "Currently not available for this category.":
             total_co2+=float(response_json["Carbon Footprint"])
+            #save carbon footprint and category for each transaction
+            carbon_footprint = response_json["Carbon Footprint"]
+            category = response_json["Category"]
+        
+            # Save transaction data in a dictionary
+            transaction_data = { 
+                "description": desc,
+                "carbon_footprint": carbon_footprint,
+                "category": category
+            }
+       
+            # Append transaction data to the list
+            transactions_data.append(transaction_data)
         if count ==10:
             break;
 
