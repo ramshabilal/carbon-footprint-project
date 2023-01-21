@@ -66,6 +66,7 @@ else:
 
     print("hello")
     #st.write("")
+    st.write(transactions)
 
     # Filter transactions by specific date range
     #transactions = account.get_transactions(date_from="2021-12-01", date_to="2022-01-21")
@@ -109,7 +110,8 @@ else:
         response_json=response.json() 
         count+=1
         #st.write("response json co2: ")
-        #st.write(response_json)
+        st.write(response_json)
+        
         if response_json["Carbon Footprint"] != "Currently not available for this category.":
             total_co2+=float(response_json["Carbon Footprint"])
         if count ==10:
