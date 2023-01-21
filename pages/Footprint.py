@@ -90,14 +90,10 @@ else:
     #st.write(transactions)
     count=0
 
-    #st.write(transactions)
-    max_transaction = transactions["transactions"]["booked"][1]
-    st.write(max_transaction)
-    st.write("^ is the max")
+    transactions_data=[]
     
     for transaction in transactions["transactions"]["booked"]:
-        if transaction["transactionAmount"]["amount"] > max_transaction["transactionAmount"]["amount"]:
-            max_transaction = transaction
+        
         #array not for sandbox
         if st.session_state.country != "Sandbox":
             desc=transaction["remittanceInformationUnstructuredArray"][0]
@@ -105,6 +101,7 @@ else:
             desc = transaction["remittanceInformationUnstructured"]
         st.write("Desc: ")
         st.write(desc)
+       
         amount=transaction["transactionAmount"]["amount"]
         #st.write("amount: ")
         #st.write(amount)
@@ -116,6 +113,20 @@ else:
         url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={country}&amount={amount}&description={desc}"
         response = requests.get(url, headers=headers)
         response_json=response.json() 
+        
+        carbon_footprint = response_json["Carbon Footprint"]
+        category = response_json["Category"]
+        
+        # Save transaction data in a dictionary
+        transaction_data = { 
+            "description": desc,
+            "carbon_footprint": carbon_footprint,
+            "category": category
+        }
+       
+        # Append transaction data to the list
+        transactions_data.append(transaction_data)
+        
         count+=1
         #st.write("response json co2: ")
         st.write(response_json)
@@ -126,9 +137,18 @@ else:
             break;
 
     total_co2=round(total_co2,2)
-    
-    st.write(max_transaction)
-    st.write("^ is the max")
+   
+    # Sort transactions_data list by carbon_footprint in descending order
+    transactions_data.sort(key=lambda x: x["carbon_footprint"], reverse=True)
+
+    # Display the top 5 transactions with the largest carbon footprints
+    st.write("Top 5 Transactions with Largest Carbon Footprints:")
+    for i in range(5):
+        transaction = transactions_data[i]
+        st.write("Description: ", transaction["description"])
+        st.write("Carbon Footprint: ", transaction["carbon_footprint"])
+        st.write("Category: ", transaction["category"])
+   
     #st.write("total co2: ")
     #st.write(total_co2)
 
