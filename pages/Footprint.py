@@ -406,14 +406,14 @@ else:
     part1 = MIMEText(text, 'plain')
     part2 = MIMEText(html, 'html')
 
+    # Add the table to the email body
+    msg.attach(MIMEText(table, "html"))
     # Attach parts into message container.
     # According to RFC 2046, the last part of a multipart message, in this case
     # the HTML message, is best and preferred.
     msg.attach(part1)
     msg.attach(part2)
-    
-    # Add the table to the email body
-    msg.attach(MIMEText(table, "html"))
+       
     
     # Send the message via local SMTP server.
     mail = smtplib.SMTP('smtp.gmail.com', 587)
