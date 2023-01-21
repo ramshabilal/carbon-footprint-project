@@ -105,7 +105,10 @@ else:
         #st.write(amount)
         date = transaction["bookingDate"]
         #st.write("date: " + date)
-        url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={st.session_state.country}&amount={amount}&description={desc}"
+        country = st.session_state.country
+        if country == "Sandbox":
+            country = "lt"
+        url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={country}&amount={amount}&description={desc}"
         response = requests.get(url, headers=headers)
         response_json=response.json() 
         count+=1
