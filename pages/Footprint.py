@@ -6,7 +6,10 @@ from nordigen import NordigenClient
 import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import pandas as pd
 from PIL import Image
+import base64
+
 "st.session_state object:", st.session_state
 
 #opening the image
@@ -16,7 +19,6 @@ image = Image.open('logo.png')
 
 st.image(image, width = 180)
 
-import base64
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -156,6 +158,12 @@ else:
     #st.write("total co2: ")
     #st.write(total_co2)
 
+    # Create a pandas DataFrame from the transaction data
+    transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "carbon_footprint", "category"])
+
+    # Generate a table of the top 5 transactions
+    table = transactions_df.to_html()
+    
     # me == my email address
     # you == recipient's email address
     me = "genifyco2@gmail.com"
@@ -166,7 +174,10 @@ else:
     msg['Subject'] = "Carbon Footprint Report"
     msg['From'] = me
     msg['To'] = you
-
+    
+    # Add the table to the email body
+    msg.attach(MIMEText(table, "html"))
+    
     code=total_co2
     code2 = st.session_state.name
 
