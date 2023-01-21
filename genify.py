@@ -173,7 +173,7 @@ if st.button("Submit"):
     div = Div(text=html)
     st.bokeh_chart(div)
 
-    new_title = '<p style="font-family:sans-serif; color:Black; font-size: 22px;">Go to Footprint page if you have completed authorization</p>'
+    new_title = '<p style="font:monospace; color:Black; font-size: 22px;">Go to Footprint page if you have completed authorization</p>'
     st.markdown(new_title, unsafe_allow_html=True)
   
 
