@@ -115,6 +115,7 @@ else:
         if not response.content:
             continue 
         else:
+            response_json=response.json() 
             st.write(response_json)
         
         count+=1
