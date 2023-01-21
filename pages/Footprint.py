@@ -136,7 +136,7 @@ else:
        
             # Append transaction data to the list
             transactions_data.append(transaction_data)
-        if count ==10:
+        if count ==40:
             break;
 
     total_co2=round(total_co2,2)
