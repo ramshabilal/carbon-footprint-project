@@ -130,7 +130,7 @@ else:
 
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = "Link"
+    msg['Subject'] = "Carbon Footprint Report"
     msg['From'] = me
     msg['To'] = you
 
