@@ -112,11 +112,13 @@ else:
             country = "lt"
         url = f"https://pfm.genify.ai/api/v1.0/txn-data/?date={date}&country={country}&amount={amount}&description={desc}"
         response = requests.get(url, headers=headers)
-        if not response.content and response.status_code != 200:
-            continue 
-        else:
-            response_json=response.json() 
-            st.write(response_json)
+        try:
+            response_json = response.json()
+        except ValueError as e:
+            print("Error: Not a JSON response")   
+            continue
+        response_json=response.json() 
+        st.write(response_json)
         
         count+=1
         #st.write("response json co2: ")
