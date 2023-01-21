@@ -126,7 +126,7 @@ else:
             total_co2+=float(response_json["Carbon Footprint"])
             #save carbon footprint and category for each transaction
             carbon_footprint = response_json["Carbon Footprint"]
-            category = response_json["Category"]
+            category = response_json["Category Name"]
         
             # Save transaction data in a dictionary
             transaction_data = { 
