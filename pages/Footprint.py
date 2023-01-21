@@ -430,4 +430,4 @@ else:
     mail.sendmail(me, you, msg.as_string())
     mail.quit()
 
-    st.write("Your carbon footprint has been emailed to you!")
+    st.write("Your carbon footprint has been emailed to you! Make sure to check your spam.")
