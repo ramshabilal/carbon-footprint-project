@@ -432,7 +432,7 @@ else:
 
     mail.starttls()
 
-    mail.login('empact.genify@gmail.com', 'fxgdnngwkzhtxxby')
+    mail.login('empact.genify@gmail.com', 'oiinqapxzbwxfatr')
     mail.sendmail(me, you, msg.as_string())
     mail.quit()
 
