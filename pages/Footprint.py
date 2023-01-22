@@ -172,7 +172,7 @@ else:
 
     # me == my email address
     # you == recipient's email address
-    me = "empact.genify@gmail.com"
+    me = "genifyco2@gmail.com"
     you = emailAddress
 
     # Create message container - the correct MIME type is multipart/alternative.
@@ -432,7 +432,7 @@ else:
 
     mail.starttls()
 
-    mail.login('empact.genify@gmail.com', 'oiinqapxzbwxfatr')
+    mail.login('genifyco2@gmail.com', 'aalnjsoddytheyan')
     mail.sendmail(me, you, msg.as_string())
     mail.quit()
 
