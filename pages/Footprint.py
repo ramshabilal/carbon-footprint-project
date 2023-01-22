@@ -153,8 +153,8 @@ else:
     # Iterate through the transactions
     for transaction in transactions_data:
         # Get the category and carbon footprint of the current transaction
-        category = transaction["Category"]
-        carbon_footprint = transaction["Carbon_footprint"]
+        category = transaction["category"]
+        carbon_footprint = transaction["carbon_footprint"]
     
         # Check if the category already exists in the dictionary
         if category in category_footprint:
@@ -168,9 +168,13 @@ else:
     category_footprint = {k: v for k, v in sorted(category_footprint.items(), key=lambda item: item[1], reverse=True)}
 
     # Create a pandas DataFrame from the top 5 categories with the highest carbon footprint
-    top_5_categories = pd.DataFrame(list(category_footprint.items())[:5], columns=["Category", "Total Carbon Footprint"])
-
-   
+    if len(category_footprint)<5:
+        top_5_categories = pd.DataFrame(list(category_footprint.items())[:len(category_footprint)], columns=["Category", "Total Carbon Footprint"])
+    else:
+        top_5_categories = pd.DataFrame(list(category_footprint.items())[:5], columns=["Category", "Total Carbon Footprint"])
+    
+    st.write(top_5_categories)
+    
     # Sort transactions_data list by carbon_footprint in descending order
     #transactions_data.sort(key=lambda x: x["carbon_footprint"], reverse=True)
 
