@@ -146,28 +146,52 @@ else:
     st.write("transaction count")
     st.write(count)
     total_co2=round(total_co2,2)
+    
+    # Create an empty dictionary to store the total carbon footprint for each category
+    category_footprint = {}
+
+    # Iterate through the transactions
+    for transaction in transactions_data:
+        # Get the category and carbon footprint of the current transaction
+        category = transaction["Category"]
+        carbon_footprint = transaction["Carbon_footprint"]
+    
+        # Check if the category already exists in the dictionary
+        if category in category_footprint:
+            # If it does, add the carbon footprint to the existing total
+            category_footprint[category] += carbon_footprint
+        else:
+            # If it doesn't, add the category and carbon footprint to the dictionary
+            category_footprint[category] = carbon_footprint
+
+    # Sort the dictionary by carbon footprint in descending order
+    category_footprint = {k: v for k, v in sorted(category_footprint.items(), key=lambda item: item[1], reverse=True)}
+
+    # Create a pandas DataFrame from the top 5 categories with the highest carbon footprint
+    top_5_categories = pd.DataFrame(list(category_footprint.items())[:5], columns=["Category", "Total Carbon Footprint"])
+
    
     # Sort transactions_data list by carbon_footprint in descending order
-    transactions_data.sort(key=lambda x: x["carbon_footprint"], reverse=True)
+    #transactions_data.sort(key=lambda x: x["carbon_footprint"], reverse=True)
 
     # Display the top 5 transactions with the largest carbon footprints
-    st.write("Top 5 Transactions with Largest Carbon Footprints:")
-    for i in range(5):
-        transaction = transactions_data[i]
-        st.write("Description: ", transaction["description"])
-        st.write("Amount: ", transaction["amount"])
-        st.write("Carbon Footprint: ", transaction["carbon_footprint"])
-        st.write("Category: ", transaction["category"])
+    #st.write("Top 5 Transactions with Largest Carbon Footprints:")
+    #for i in range(5):
+     #   transaction = transactions_data[i]
+      #  st.write("Description: ", transaction["description"])
+       # st.write("Amount: ", transaction["amount"])
+        #st.write("Carbon Footprint: ", transaction["carbon_footprint"])
+        #st.write("Category: ", transaction["category"])
    
     #st.write("total co2: ")
     #st.write(total_co2)
 
     # Create a pandas DataFrame from the transaction data
-    transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "amount", "carbon_footprint", "category"])
-    st.write(transactions_df)
+    #transactions_df = pd.DataFrame(transactions_data[:5], columns=["description", "amount", "carbon_footprint", "category"])
+    #st.write(transactions_df)
     
     # Generate a table of the top 5 transactions
-    table = transactions_df.to_html()
+    table = top_5_categories.to_html()
     #st.write(table)
 
     # me == my email address
