@@ -94,7 +94,7 @@ else:
     
     for transaction in transactions["transactions"]["booked"]:
         count+=1
-        if count == 30:
+        if count == 20:
             break;
         #array not for sandbox
         if st.session_state.country != "Sandbox":
