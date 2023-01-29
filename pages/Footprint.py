@@ -215,7 +215,7 @@ else:
     code3 = table
     # Create the body of the message (a plain-text and an HTML version).
     text = "Hi!How are you?Here is your carbon footprint: " + str(total_co2) + " kg"
-     html = """\
+    html = """\
     <html>
       <head>
         <!-- NAME: 1 COLUMN -->
