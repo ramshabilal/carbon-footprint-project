@@ -13,6 +13,10 @@ from streamlit.components.v1 import html
 from PIL import Image
 import base64
 
+#set page title to Step 1
+st.set_page_config(
+page_title="Step 1|Connect your bank account")
+
 #condense the layout
 padding = 0
 st.markdown(f""" <style>
