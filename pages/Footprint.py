@@ -10,7 +10,13 @@ import pandas as pd
 from PIL import Image
 import base64
 
-"st.session_state object:", st.session_state
+
+
+
+
+#set page title to Step 2
+st.set_page_config(
+page_title="Step 2 | Get your footprint report")
 
 #opening the image
 #image = Image.open('logo.png')
