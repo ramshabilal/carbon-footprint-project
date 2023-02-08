@@ -15,7 +15,7 @@ import base64
 
 #set page title to Step 1
 st.set_page_config(
-page_title="Step 1|Connect your bank account")
+page_title="Step 1 | Connect your bank account")
 
 #condense the layout
 padding = 0
