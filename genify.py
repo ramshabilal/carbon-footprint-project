@@ -12,7 +12,19 @@ from bokeh.models.widgets import Div
 from streamlit.components.v1 import html
 from PIL import Image
 import base64
+from st_pages import Page, show_pages, add_page_title
 
+# Optional -- adds the title and icon to the current page
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles 
+# and icons should be
+show_pages(
+    [
+        Page("genify.py", "Step 1 | Connect to bank account"),
+        Page("Footprint.py", "Step 2 | Get footprint report"),
+    ]
+)
 #set page title to Step 1
 st.set_page_config(
 page_title="Step 1|Connect your bank account")
