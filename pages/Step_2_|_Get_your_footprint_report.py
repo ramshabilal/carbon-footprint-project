@@ -11,9 +11,6 @@ from PIL import Image
 import base64
 
 
-
-
-
 #set page title to Step 2
 st.set_page_config(
 page_title="Step 2 | Get your footprint report")
@@ -72,7 +69,7 @@ else:
 
     print("hello")
     #st.write("")
-    st.write(transactions)
+    #st.write(transactions)
 
     # Filter transactions by specific date range
     #transactions = account.get_transactions(date_from="2021-12-01", date_to="2022-01-21")
@@ -126,7 +123,7 @@ else:
             print("Error: Not a JSON response")   
             continue
         #response_json=response.json() 
-        st.write(response_json)
+        #st.write(response_json)
         
         
         #st.write("response json co2: ")
@@ -149,8 +146,8 @@ else:
             # Append transaction data to the list
             transactions_data.append(transaction_data)
         
-    st.write("transaction count")
-    st.write(count)
+    print("Transaction count")
+    print(count)
     total_co2=round(total_co2,2)
     
     # Create an empty dictionary to store the total carbon footprint for each category
@@ -179,7 +176,7 @@ else:
     else:
         top_5_categories = pd.DataFrame(list(category_footprint.items())[:5], columns=["Category", "Total Carbon Footprint"])
     
-    st.write(top_5_categories)
+    #st.write(top_5_categories)
     
     # Sort transactions_data list by carbon_footprint in descending order
     #transactions_data.sort(key=lambda x: x["carbon_footprint"], reverse=True)
